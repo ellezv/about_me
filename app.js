@@ -20,6 +20,7 @@ var questionOne = prompt("I went to nursing school").toLowerCase();
 console.log("user input question1: " + questionOne);
 if (questionOne=== 'y' || questionOne == 'yes') {
   congratulate();
+  guessScore = guessScore + 1;
 }else if (questionOne === 'no' || questionOne=== 'n') {
   wrongAnswer();
   alert("I went to nursing school in France!");
@@ -33,6 +34,7 @@ var questionTwo = prompt("I am allergic to bananas").toLowerCase();
 console.log("user input question2: " + questionTwo);
 if (questionTwo === 'yes' || questionTwo === 'y') {
   congratulate();
+  guessScore = guessScore + 1;
 }else if (questionTwo === 'no' || questionTwo === 'n') {
   console.log("user input: " + questionTwo);
   wrongAnswer();
@@ -47,6 +49,7 @@ var questionThree = prompt("I speak 4 languages").toLowerCase();
 console.log("user input question3: " + questionThree);
 if (questionThree=== 'yes'|| questionThree === 'y' ) {
   congratulate();
+  guessScore = guessScore + 1;
 }else if (questionThree=== 'no' || questionThree === 'n') {
   wrongAnswer();
   alert("I speak French, English, German and Latin!");
@@ -62,6 +65,7 @@ if (questionFour === 'yes' || questionFour === 'y') {
   alert("I've actually lived in 5 : France, Germany, England, Canada and the US");
 }else if (questionFour === 'no' || questionFour === 'n') {
   congratulate();
+  guessScore = guessScore + 1;
 }else {
   wrongInput();
   alert("The answer was no, I lived in 5 countries : France, Germany, England, Canada and the US");
@@ -74,6 +78,7 @@ if (questionFive === 'yes' || questionFive === 'y') {
   alert("I don't golf, but I read a lot!");
 }else if (questionFive === 'no' || questionFive ==='n') {
   congratulate();
+  guessScore = guessScore + 1
 }else {
   wrongInput();
   alert("The answer was no, I do not golf, I read!");
@@ -82,7 +87,7 @@ if (questionFive === 'yes' || questionFive === 'y') {
 alert("Now let's play a guessing game!");
 var i=0
 while(i<4) {
-  var questionSix = parseInt(prompt("How many children does Maelle have?"));
+  var questionSix = parseInt(prompt("How many children do I have?"));
   console.log("user input question6: " + questionSix);
   if (isNaN(questionSix) === true ) {
     alert("That's not even a number!");
@@ -103,15 +108,20 @@ console.log("guess score: " + guessScore);
 alert("Maelle has two children, Juliet and Charles.");
 
 var city = ['soissons', 'lille', 'frankfurt', 'vancouver', 'york'];
-  var questionSeven = prompt("Besides Seattle, in what other city has Maelle lived in?").toLowerCase();
+var cityGuess = 0;
+while (cityGuess<6) {
+  var questionSeven = prompt("Besides Seattle, in what other city have I lived in?").toLowerCase();
   console.log("user input question7: " + questionSeven);
   var x;
   for (x in city) {
     if (questionSeven === x) {
       guessScore = guessScore +1;
       alert("You're right!");
-      break;
+      cityGuess=6 ;
     }else {
-
+      cityGuess++;
     }
   }
+}
+
+alert("You guessed " + guessScore + " out of 7 answers!")
