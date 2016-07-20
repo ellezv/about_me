@@ -1,4 +1,5 @@
 'use strict';
+var guessScore = 0;
 var userName = prompt("Bonjour! What's your name?");
 alert("ok " + userName + ", let's play a guessing game! Answer yes or no to the following questions:");
 
@@ -6,17 +7,17 @@ alert("ok " + userName + ", let's play a guessing game! Answer yes or no to the 
 
 function congratulate() {
   alert("You're right " + userName +"!");
-};
+}
 function wrongAnswer() {
   alert("Sorry, " + userName+ ", you're wrong!");
-};
+}
 function wrongInput() {
   alert("Sorry, " + userName + " I didn't quite get that...");
-};
+}
 
 //Quizz :
 var questionOne = prompt("I went to nursing school").toLowerCase();
-console.log("user input: " + questionOne);
+console.log("user input question1: " + questionOne);
 if (questionOne=== 'y' || questionOne == 'yes') {
   congratulate();
 }else if (questionOne === 'no' || questionOne=== 'n') {
@@ -26,10 +27,10 @@ if (questionOne=== 'y' || questionOne == 'yes') {
   console.log("user input: " + questionOne);
   wrongInput();
   alert("The answer was yes!");
-};
+}
 
 var questionTwo = prompt("I am allergic to bananas").toLowerCase();
-console.log("user input: " + questionTwo);
+console.log("user input question2: " + questionTwo);
 if (questionTwo === 'yes' || questionTwo === 'y') {
   congratulate();
 }else if (questionTwo === 'no' || questionTwo === 'n') {
@@ -37,13 +38,13 @@ if (questionTwo === 'yes' || questionTwo === 'y') {
   wrongAnswer();
   alert("I'm actually pretty allergic to bananas. Weird, eh.");
 }else {
-  console.log("user input: " + questionTwo);
+  console.log("user input question2: " + questionTwo);
   wrongInput();
   alert("As weird as it sounds, I am indeed allergic to bananas");
-};
+}
 
 var questionThree = prompt("I speak 4 languages").toLowerCase();
-console.log("user input: " + questionThree);
+console.log("user input question3: " + questionThree);
 if (questionThree=== 'yes'|| questionThree === 'y' ) {
   congratulate();
 }else if (questionThree=== 'no' || questionThree === 'n') {
@@ -52,10 +53,10 @@ if (questionThree=== 'yes'|| questionThree === 'y' ) {
 }else {
   wrongInput();
   alert("The answer was yes, I speak French, English, German and Latin");
-};
+}
 
 var questionFour = prompt("I've lived in 6 countries").toLowerCase();
-console.log("user input: " + questionFour);
+console.log("user input question 4: " + questionFour);
 if (questionFour === 'yes' || questionFour === 'y') {
   wrongAnswer();
   alert("I've actually lived in 5 : France, Germany, England, Canada and the US");
@@ -64,16 +65,53 @@ if (questionFour === 'yes' || questionFour === 'y') {
 }else {
   wrongInput();
   alert("The answer was no, I lived in 5 countries : France, Germany, England, Canada and the US");
-};
+}
 
 var questionFive = prompt("In my spare time I golf").toLowerCase()
-console.log("user input: " + questionFive) ;
+console.log("user input question5: " + questionFive) ;
 if (questionFive === 'yes' || questionFive === 'y') {
   wrongAnswer();
-  alert("I don't golf, but I read a lot!")
+  alert("I don't golf, but I read a lot!");
 }else if (questionFive === 'no' || questionFive ==='n') {
   congratulate();
 }else {
   wrongInput();
   alert("The answer was no, I do not golf, I read!");
-};
+}
+
+alert("Now let's play a guessing game!");
+var i=0
+while(i<4) {
+  var questionSix = parseInt(prompt("How many children does Maelle have?"));
+  console.log("user input question6: " + questionSix);
+  if (isNaN(questionSix) === true ) {
+    alert("That's not even a number!");
+    i++;
+  }else if (questionSix === 2) {
+      alert("You're right!");
+      guessScore = guessScore+1;
+      i=4;
+  }else if (questionSix < 2) {
+      alert("You forgot some :)");
+      i++;
+  }else {
+      alert("That's way too many!");
+      i++;
+    }
+}
+console.log("guess score: " + guessScore);
+alert("Maelle has two children, Juliet and Charles.");
+
+var city = ['soissons', 'lille', 'frankfurt', 'vancouver', 'york'];
+  var questionSeven = prompt("Besides Seattle, in what other city has Maelle lived in?").toLowerCase();
+  console.log("user input question7: " + questionSeven);
+  var x;
+  for (x in city) {
+    if (questionSeven === x) {
+      guessScore = guessScore +1;
+      alert("You're right!");
+      break;
+    }else {
+
+    }
+  }
