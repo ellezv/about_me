@@ -15,11 +15,11 @@ function wrongInput() {
 }
 
 //Quizz :
-var questionOne = prompt("I went to nursing school");
+var questionOne = prompt("I went to nursing school").toLowerCase();
 console.log("user input: " + questionOne);
-if (questionOne.toLowerCase() === 'y' || questionOne.toLowerCase() == 'yes') {
+if (questionOne=== 'y' || questionOne == 'yes') {
   congratulate();
-}else if (questionOne.toLowerCase() === 'no' || questionOne.toLowerCase() === 'n') {
+}else if (questionOne === 'no' || questionOne=== 'n') {
   wrongAnswer();
   alert("I went to nursing school in France!");
 }else {
@@ -28,11 +28,11 @@ if (questionOne.toLowerCase() === 'y' || questionOne.toLowerCase() == 'yes') {
   alert("The answer was yes!");
 }
 
-var questionTwo = prompt("I am allergic to bananas");
+var questionTwo = prompt("I am allergic to bananas").toLowerCase();
 console.log("user input: " + questionTwo);
-if (questionTwo.toLowerCase() === 'yes' || questionTwo.toLowerCase() === 'y') {
+if (questionTwo === 'yes' || questionTwo === 'y') {
   congratulate();
-}else if (questionTwo.toLowerCase() === 'no' || questionTwo.toLowerCase() === 'n') {
+}else if (questionTwo === 'no' || questionTwo === 'n') {
   console.log("user input: " + questionTwo);
   wrongAnswer();
   alert("I'm actually pretty allergic to bananas. Weird, eh.");
@@ -42,11 +42,11 @@ if (questionTwo.toLowerCase() === 'yes' || questionTwo.toLowerCase() === 'y') {
   alert("As weird as it sounds, I am indeed allergic to bananas");
 }
 
-var questionThree = prompt("I speak 4 languages");
+var questionThree = prompt("I speak 4 languages").toLowerCase();
 console.log("user input: " + questionThree);
-if (questionThree.toLowerCase() === 'yes'|| questionThree.toLowerCase() === 'y' ) {
+if (questionThree=== 'yes'|| questionThree === 'y' ) {
   congratulate();
-}else if (questionThree.toLowerCase() === 'no' || questionThree.toLowerCase() === 'n') {
+}else if (questionThree=== 'no' || questionThree === 'n') {
   wrongAnswer();
   alert("I speak French, English, German and Latin!");
 }else {
@@ -54,12 +54,12 @@ if (questionThree.toLowerCase() === 'yes'|| questionThree.toLowerCase() === 'y' 
   alert("The answer was yes, I speak French, English, German and Latin");
   }
 
-var questionFour = prompt("I've lived in 6 countries");
+var questionFour = prompt("I've lived in 6 countries").toLowerCase();
 console.log("user input: " + questionFour);
-if (questionFour.toLowerCase() === 'yes' || questionFour.toLowerCase() === 'y') {
+if (questionFour === 'yes' || questionFour === 'y') {
   wrongAnswer();
   alert("I've actually lived in 5 : France, Germany, England, Canada and the US");
-}else if (questionFour.toLowerCase() === 'no' || questionFour.toLowerCase() === 'n') {
+}else if (questionFour === 'no' || questionFour === 'n') {
   congratulate();
 }else {
   wrongInput();
@@ -67,11 +67,11 @@ if (questionFour.toLowerCase() === 'yes' || questionFour.toLowerCase() === 'y') 
 }
 
 var questionFive = prompt("In my spare time I golf")
-console.log("user input: " + questionFive);
-if (questionFive.toLowerCase() === 'yes' || questionFive.toLowerCase() === 'y') {
+console.log("user input: " + questionFive).toLowerCase() ;
+if (questionFive === 'yes' || questionFive === 'y') {
   wrongAnswer();
   alert("I don't golf, but I read a lot!")
-}else if (questionFive.toLowerCase() === 'no' || questionFive.toLowerCase()==='n') {
+}else if (questionFive === 'no' || questionFive ==='n') {
   congratulate();
 }else {
   wrongInput();
