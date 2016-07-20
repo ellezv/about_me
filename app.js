@@ -66,8 +66,8 @@ if (questionFour === 'yes' || questionFour === 'y') {
   alert("The answer was no, I lived in 5 countries : France, Germany, England, Canada and the US");
 }
 
-var questionFive = prompt("In my spare time I golf")
-console.log("user input: " + questionFive).toLowerCase() ;
+var questionFive = prompt("In my spare time I golf").toLowerCase()
+console.log("user input: " + questionFive) ;
 if (questionFive === 'yes' || questionFive === 'y') {
   wrongAnswer();
   alert("I don't golf, but I read a lot!")
