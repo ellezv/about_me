@@ -7,12 +7,21 @@ h3 {
   text-decoration: underline;
 }
 
+img {
+  border-radius: 50%;
+  width: 100px;
+  height: 130px;
+  margin-bottom: 30px;
+
+}
+
 #intro {
   text-align: center;
+  border-top: 10px;
 }
 
 #bio {
-  padding-top : 50px;
+  padding-top : 30px;
   float : left;
   width: 250px;
   text-align: justify;
@@ -21,7 +30,7 @@ h3 {
 }
 
 #exp {
-  padding-top: 50px;
+  padding-top: 30px;
   float : left;
   width : 250px;
 
@@ -30,7 +39,7 @@ h3 {
 }
 
 #goals {
-  padding-top: 50px;
+  padding-top: 30px;
   margin-left : 900px;
   width: 250px;
 }
@@ -42,5 +51,5 @@ ul {
 
 body {
   font-family : 'Lobster', cursive;
-  background-color: #E0E0E0;
+  background-color: #FFE1B8;
 }
