@@ -85,43 +85,42 @@ if (questionFive === 'yes' || questionFive === 'y') {
 }
 
 alert("Now let's play a guessing game!");
-var i=0
-while(i<4) {
+var childrenGuess=0
+while(childrenGuess<4) {
   var questionSix = parseInt(prompt("How many children do I have?"));
   console.log("user input question6: " + questionSix);
   if (isNaN(questionSix) === true ) {
     alert("That's not even a number!");
-    i++;
+    childrenGuess++;
   }else if (questionSix === 2) {
       alert("You're right!");
       guessScore = guessScore+1;
-      i=4;
+      childrenGuess = 4;
   }else if (questionSix < 2) {
       alert("You forgot some :)");
-      i++;
+      childrenGuess++;
   }else {
       alert("That's way too many!");
-      i++;
+      childrenGuess++;
     }
 }
 console.log("guess score: " + guessScore);
-alert("Maelle has two children, Juliet and Charles.");
+alert("I have two children, Juliet and Charles.");
 
 var city = ['soissons', 'lille', 'frankfurt', 'vancouver', 'york'];
 var cityGuess = 0;
 while (cityGuess<6) {
   var questionSeven = prompt("Besides Seattle, in what other city have I lived in?").toLowerCase();
   console.log("user input question7: " + questionSeven);
-  var x;
-  for (x in city) {
-    if (questionSeven === x) {
-      guessScore = guessScore +1;
+  for (var i=0; i<city.length; i++) {
+    if (questionSeven === city[i]) {
+      cityGuess = 6;
+      guessScore = guessScore + 1;
       alert("You're right!");
-      cityGuess=6 ;
     }else {
-      cityGuess++;
     }
   }
+  cityGuess++;
 }
 
 alert("You guessed " + guessScore + " out of 7 answers!")
