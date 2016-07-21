@@ -78,7 +78,7 @@ if (questionFive === 'yes' || questionFive === 'y') {
   alert("I don't golf, but I read a lot!");
 }else if (questionFive === 'no' || questionFive ==='n') {
   congratulate();
-  guessScore = guessScore + 1
+  guessScore = guessScore + 1;
 }else {
   wrongInput();
   alert("The answer was no, I do not golf, I read!");
@@ -96,8 +96,8 @@ while (randomNumberGuess < 4 && goodGuess === false) {
     alert("That's not even a number!");
     randomNumberGuess++;
   }else if (questionSix === randomNumber) {
-    alert("You guess it!");
-    guessScore = guessScore++;
+    alert("You guessed it!");
+    guessScore = guessScore + 1;
     goodGuess = true;
   }else if (questionSix > randomNumber) {
     alert("That's too high!");
