@@ -67,19 +67,21 @@ function quizThree() {
 }
 quizThree();
 
-var questionFour = prompt('I\'ve lived in 6 countries').toLowerCase();
-console.log('user input question 4: ' + questionFour);
-if (questionFour === 'yes' || questionFour === 'y') {
-  wrongAnswer();
-  alert('I\'ve actually lived in 5 : France, Germany, England, Canada and the US');
-}else if (questionFour === 'no' || questionFour === 'n') {
-  congratulate();
-  guessScore = guessScore + 1;
-}else {
-  wrongInput();
-  alert('The answer was no, I lived in 5 countries : France, Germany, England, Canada and the US');
+function quizFour() {
+  var questionFour = prompt('I\'ve lived in 6 countries').toLowerCase();
+  console.log('user input question 4: ' + questionFour);
+  if (questionFour === 'yes' || questionFour === 'y') {
+    wrongAnswer();
+    alert('I\'ve actually lived in 5 : France, Germany, England, Canada and the US');
+  }else if (questionFour === 'no' || questionFour === 'n') {
+    congratulate();
+    guessScore = guessScore + 1;
+  }else {
+    wrongInput();
+    alert('The answer was no, I lived in 5 countries : France, Germany, England, Canada and the US');
+  }
 }
-
+quizFour();
 var questionFive = prompt('In my spare time I golf').toLowerCase();
 console.log('user input question5: ' + questionFive) ;
 if (questionFive === 'yes' || questionFive === 'y') {
