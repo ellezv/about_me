@@ -127,26 +127,30 @@ function quizSix() {
 }
 quizSix();
 
-var city = ['soissons', 'lille', 'frankfurt', 'vancouver', 'york'];
-var cityGuess = 0;
-goodGuess = false;
-while (cityGuess < 6 && goodGuess === false) {
-  var questionSeven = prompt('Besides Seattle, in what other city have I lived in?').toLowerCase();
-  console.log('user input question7: ' + questionSeven);
-  for (var i = 0; i < city.length; i++) {
-    if (questionSeven === city[i]) {
-      guessScore = guessScore + 1;
-      goodGuess = true;
+function quizSeven() {
+  var city = ['soissons', 'lille', 'frankfurt', 'vancouver', 'york'];
+  var cityGuess = 0;
+  var goodGuess = false;
+  while (cityGuess < 6 && goodGuess === false) {
+    var questionSeven = prompt('Besides Seattle, in what other city have I lived in?').toLowerCase();
+    console.log('user input question7: ' + questionSeven);
+    for (var i = 0; i < city.length; i++) {
+      if (questionSeven === city[i]) {
+        guessScore = guessScore + 1;
+        goodGuess = true;
+      }
+    }
+    cityGuess++;
+    if (goodGuess === false) {
+      alert('I\'ve never lived there.');
+    }else {
+      alert('You\'re right!');
+
     }
   }
-  cityGuess++;
-  if (goodGuess === false) {
-    alert('I\'ve never lived there.');
-  }else {
-    alert('You\'re right!');
-
-  }
+  alert('Besides Seattle, I\'ve lived in Soissons, Lille, Frankfurt, Vancouver and York');
 }
-alert('Besides Seattle, I\'ve lived in Soissons, Lille, Frankfurt, Vancouver and York');
+
+quizSeven();
 
 alert('You guessed ' + guessScore + ' out of 7 answers, ' + userName + '!');
