@@ -33,21 +33,23 @@ function quizOne() {
 }
 quizOne();
 
-var questionTwo = prompt('I am allergic to bananas').toLowerCase();
-console.log('user input question2: ' + questionTwo);
-if (questionTwo === 'yes' || questionTwo === 'y') {
-  congratulate();
-  guessScore = guessScore + 1;
-}else if (questionTwo === 'no' || questionTwo === 'n') {
-  console.log('user input: ' + questionTwo);
-  wrongAnswer();
-  alert('I\'m actually pretty allergic to bananas. Weird, eh.');
-}else {
+function quizTwo() {
+  var questionTwo = prompt('I am allergic to bananas').toLowerCase();
   console.log('user input question2: ' + questionTwo);
-  wrongInput();
-  alert('As weird as it sounds, I am indeed allergic to bananas');
+  if (questionTwo === 'yes' || questionTwo === 'y') {
+    congratulate();
+    guessScore = guessScore + 1;
+  }else if (questionTwo === 'no' || questionTwo === 'n') {
+    console.log('user input: ' + questionTwo);
+    wrongAnswer();
+    alert('I\'m actually pretty allergic to bananas. Weird, eh.');
+  }else {
+    console.log('user input question2: ' + questionTwo);
+    wrongInput();
+    alert('As weird as it sounds, I am indeed allergic to bananas');
+  }
 }
-
+quizTwo();
 var questionThree = prompt('I speak 4 languages').toLowerCase();
 console.log('user input question3: ' + questionThree);
 if (questionThree === 'yes' || questionThree === 'y' ) {
