@@ -85,8 +85,9 @@ if (questionFive === 'yes' || questionFive === 'y') {
 }
 
 alert("Now let's play a guessing game!");
-var childrenGuess=0
-while(childrenGuess<4) {
+var childrenGuess=0;
+var goodGuess = false;
+while(childrenGuess<4 && goodGuess === false) {
   var questionSix = parseInt(prompt("How many children do I have?"));
   console.log("user input question6: " + questionSix);
   if (isNaN(questionSix) === true ) {
@@ -95,7 +96,7 @@ while(childrenGuess<4) {
   }else if (questionSix === 2) {
       alert("You're right!");
       guessScore = guessScore+1;
-      childrenGuess = 4;
+      goodGuess = true;
   }else if (questionSix < 2) {
       alert("You forgot some :)");
       childrenGuess++;
@@ -109,10 +110,10 @@ alert("I have two children, Juliet and Charles.");
 
 var city = ['soissons', 'lille', 'frankfurt', 'vancouver', 'york'];
 var cityGuess = 0;
-while (cityGuess<6) {
+goodGuess = false;
+while (cityGuess<6 && goodGuess === false) {
   var questionSeven = prompt("Besides Seattle, in what other city have I lived in?").toLowerCase();
   console.log("user input question7: " + questionSeven);
-  var goodGuess = false;
   for (var i=0; i<city.length; i++) {
     if (questionSeven === city[i]) {
       guessScore = guessScore + 1;
@@ -124,9 +125,9 @@ while (cityGuess<6) {
     alert("I've never lived there.");
   }else {
     alert("You're right!");
-    cityGuess = 6;
+
   }
 }
 alert("Besides Seattle, I've lived in Soissons, Lille, Frankfurt, Vancouver and York");
 
-alert("You guessed " + guessScore + " out of 7 answers!")
+alert("You guessed " + guessScore + " out of 7 answers, "+ userName +"!")
