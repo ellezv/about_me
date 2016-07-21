@@ -82,18 +82,22 @@ function quizFour() {
   }
 }
 quizFour();
-var questionFive = prompt('In my spare time I golf').toLowerCase();
-console.log('user input question5: ' + questionFive) ;
-if (questionFive === 'yes' || questionFive === 'y') {
-  wrongAnswer();
-  alert('I don\'t golf, but I read a lot!');
-}else if (questionFive === 'no' || questionFive === 'n') {
-  congratulate();
-  guessScore = guessScore + 1;
-}else {
-  wrongInput();
-  alert('The answer was no, I do not golf, I read!');
+
+function quizFive() {
+  var questionFive = prompt('In my spare time I golf').toLowerCase();
+  console.log('user input question5: ' + questionFive) ;
+  if (questionFive === 'yes' || questionFive === 'y') {
+    wrongAnswer();
+    alert('I don\'t golf, but I read a lot!');
+  }else if (questionFive === 'no' || questionFive === 'n') {
+    congratulate();
+    guessScore = guessScore + 1;
+  }else {
+    wrongInput();
+    alert('The answer was no, I do not golf, I read!');
+  }
 }
+quizFive();
 
 alert('Now let\'s play a guessing game!');
 var randomNumber = Math.round(Math.random() * 10);
