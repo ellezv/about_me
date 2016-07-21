@@ -50,18 +50,22 @@ function quizTwo() {
   }
 }
 quizTwo();
-var questionThree = prompt('I speak 4 languages').toLowerCase();
-console.log('user input question3: ' + questionThree);
-if (questionThree === 'yes' || questionThree === 'y' ) {
-  congratulate();
-  guessScore = guessScore + 1;
-}else if (questionThree === 'no' || questionThree === 'n') {
-  wrongAnswer();
-  alert('I speak French, English, German and Latin!');
-}else {
-  wrongInput();
-  alert('The answer was yes, I speak French, English, German and Latin');
+
+function quizThree() {
+  var questionThree = prompt('I speak 4 languages').toLowerCase();
+  console.log('user input question3: ' + questionThree);
+  if (questionThree === 'yes' || questionThree === 'y' ) {
+    congratulate();
+    guessScore = guessScore + 1;
+  }else if (questionThree === 'no' || questionThree === 'n') {
+    wrongAnswer();
+    alert('I speak French, English, German and Latin!');
+  }else {
+    wrongInput();
+    alert('The answer was yes, I speak French, English, German and Latin');
+  }
 }
+quizThree();
 
 var questionFour = prompt('I\'ve lived in 6 countries').toLowerCase();
 console.log('user input question 4: ' + questionFour);
