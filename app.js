@@ -85,28 +85,29 @@ if (questionFive === 'yes' || questionFive === 'y') {
 }
 
 alert("Now let's play a guessing game!");
-var childrenGuess=0;
+var randomNumber = Math.round(Math.random() * 10);
+console.log(randomNumber);
 var goodGuess = false;
-while(childrenGuess<4 && goodGuess === false) {
-  var questionSix = parseInt(prompt("How many children do I have?"));
-  console.log("user input question6: " + questionSix);
-  if (isNaN(questionSix) === true ) {
+var randomNumberGuess = 0;
+while (randomNumberGuess < 4 && goodGuess === false) {
+  var questionSix = parseInt(prompt("Guess a number between 0 and 10!"));
+  console.log("User input question6: " + questionSix);
+  if (isNaN(questionSix)=== true) {
     alert("That's not even a number!");
-    childrenGuess++;
-  }else if (questionSix === 2) {
-      alert("You're right!");
-      guessScore = guessScore+1;
-      goodGuess = true;
-  }else if (questionSix < 2) {
-      alert("You forgot some :)");
-      childrenGuess++;
-  }else {
-      alert("That's way too many!");
-      childrenGuess++;
-    }
+    randomNumberGuess++;
+  }else if (questionSix === randomNumber) {
+    alert("You guess it!");
+    guessScore = guessScore++;
+    goodGuess = true;
+  }else if (questionSix > randomNumber) {
+    alert("That's too high!");
+    randomNumberGuess++;
+  }else if (questionSix < randomNumber) {
+    alert("That's too low!");
+    randomNumberGuess++;
+  }
 }
-console.log("guess score: " + guessScore);
-alert("I have two children, Juliet and Charles.");
+alert("The number was " + randomNumber);
 
 var city = ['soissons', 'lille', 'frankfurt', 'vancouver', 'york'];
 var cityGuess = 0;
