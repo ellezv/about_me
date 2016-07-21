@@ -127,5 +127,6 @@ while (cityGuess<6) {
     cityGuess = 6;
   }
 }
+alert("Besides Seattle, I've lived in Soissons, Lille, Frankfurt, Vancouver and York");
 
 alert("You guessed " + guessScore + " out of 7 answers!")
