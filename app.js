@@ -112,15 +112,20 @@ var cityGuess = 0;
 while (cityGuess<6) {
   var questionSeven = prompt("Besides Seattle, in what other city have I lived in?").toLowerCase();
   console.log("user input question7: " + questionSeven);
+  var goodGuess = false;
   for (var i=0; i<city.length; i++) {
     if (questionSeven === city[i]) {
-      cityGuess = 6;
       guessScore = guessScore + 1;
-      alert("You're right!");
-    }else {
+      goodGuess = true;
     }
   }
   cityGuess++;
+  if (goodGuess === false) {
+    alert("I've never lived there.");
+  }else {
+    alert("You're right!");
+    cityGuess = 6;
+  }
 }
 
 alert("You guessed " + guessScore + " out of 7 answers!")
