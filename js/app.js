@@ -16,19 +16,22 @@ function wrongInput() {
 }
 
 //Quizz :
-var questionOne = prompt('I went to nursing school').toLowerCase();
-console.log('user input question1: ' + questionOne);
-if (questionOne === 'y' || questionOne == 'yes') {
-  congratulate();
-  guessScore = guessScore + 1;
-}else if (questionOne === 'no' || questionOne === 'n') {
-  wrongAnswer();
-  alert('I went to nursing school in France!');
-}else {
-  console.log('user input: ' + questionOne);
-  wrongInput();
-  alert('The answer was yes!');
+function quizOne() {
+  var questionOne = prompt('I went to nursing school').toLowerCase();
+  console.log('user input question1: ' + questionOne);
+  if (questionOne === 'y' || questionOne == 'yes') {
+    congratulate();
+    guessScore = guessScore + 1;
+  }else if (questionOne === 'no' || questionOne === 'n') {
+    wrongAnswer();
+    alert('I went to nursing school in France!');
+  }else {
+    console.log('user input: ' + questionOne);
+    wrongInput();
+    alert('The answer was yes!');
+  }
 }
+quizOne();
 
 var questionTwo = prompt('I am allergic to bananas').toLowerCase();
 console.log('user input question2: ' + questionTwo);
