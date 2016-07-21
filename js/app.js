@@ -99,30 +99,33 @@ function quizFive() {
 }
 quizFive();
 
-alert('Now let\'s play a guessing game!');
-var randomNumber = Math.round(Math.random() * 10);
-console.log(randomNumber);
-var goodGuess = false;
-var randomNumberGuess = 0;
-while (randomNumberGuess < 4 && goodGuess === false) {
-  var questionSix = parseInt(prompt('Guess a number between 0 and 10!'));
-  console.log('User input question6: ' + questionSix);
-  if (isNaN(questionSix) === true) {
-    alert('That\'s not even a number!');
-    randomNumberGuess++;
-  }else if (questionSix === randomNumber) {
-    alert('You guessed it!');
-    guessScore = guessScore + 1;
-    goodGuess = true;
-  }else if (questionSix > randomNumber) {
-    alert('That\'s too high!');
-    randomNumberGuess++;
-  }else if (questionSix < randomNumber) {
-    alert('That\'s too low!');
-    randomNumberGuess++;
+function quizSix() {
+  alert('Now let\'s play a guessing game!');
+  var randomNumber = Math.round(Math.random() * 10);
+  console.log(randomNumber);
+  var goodGuess = false;
+  var randomNumberGuess = 0;
+  while (randomNumberGuess < 4 && goodGuess === false) {
+    var questionSix = parseInt(prompt('Guess a number between 0 and 10!'));
+    console.log('User input question6: ' + questionSix);
+    if (isNaN(questionSix) === true) {
+      alert('That\'s not even a number!');
+      randomNumberGuess++;
+    }else if (questionSix === randomNumber) {
+      alert('You guessed it!');
+      guessScore = guessScore + 1;
+      goodGuess = true;
+    }else if (questionSix > randomNumber) {
+      alert('That\'s too high!');
+      randomNumberGuess++;
+    }else if (questionSix < randomNumber) {
+      alert('That\'s too low!');
+      randomNumberGuess++;
+    }
   }
+  alert('The number was ' + randomNumber);
 }
-alert('The number was ' + randomNumber);
+quizSix();
 
 var city = ['soissons', 'lille', 'frankfurt', 'vancouver', 'york'];
 var cityGuess = 0;
