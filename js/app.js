@@ -2,106 +2,107 @@
 var guessScore = 0;
 var userName = prompt('Bonjour! What\'s your name?');
 alert('ok ' + userName + ', let\'s play a guessing game! Answer yes or no to the following questions:');
+var rightAnswer = '';
 
 //functions :
 
-function congratulate() {
-  alert('You\'re right ' + userName + '!');
-}
-function wrongAnswer() {
-  alert('Sorry, ' + userName + ', you\'re wrong!');
-}
-function wrongInput() {
-  alert('Sorry, ' + userName + ' I didn\'t quite get that...');
+function guessCount() {
+  guessScore++;
+  return guessScore;
 }
 
-//Quizz :
+function congratulate() {
+  alert('You\'re right ' + userName + '!');
+  alert(rightAnswer);
+}
+
+function wrongAnswer() {
+  alert('Sorry, ' + userName + ', you\'re wrong!');
+  alert(rightAnswer);
+}
+
+function wrongInput() {
+  alert('Sorry, ' + userName + ' I didn\'t quite get that...');
+  alert(rightAnswer);
+}
+
 function quizOne() {
   var questionOne = prompt('I went to nursing school').toLowerCase();
+  rightAnswer = 'I did go to nursing school';
   console.log('user input question1: ' + questionOne);
   if (questionOne === 'y' || questionOne == 'yes') {
     congratulate();
-    guessScore = guessScore + 1;
+    guessCount();
   }else if (questionOne === 'no' || questionOne === 'n') {
     wrongAnswer();
-    alert('I went to nursing school in France!');
   }else {
     console.log('user input: ' + questionOne);
     wrongInput();
-    alert('The answer was yes!');
   }
 }
-quizOne();
 
 function quizTwo() {
   var questionTwo = prompt('I am allergic to bananas').toLowerCase();
   console.log('user input question2: ' + questionTwo);
+  rightAnswer = 'As weird as it sounds, I am indeed allergic to bananas';
   if (questionTwo === 'yes' || questionTwo === 'y') {
     congratulate();
-    guessScore = guessScore + 1;
+    guessCount();
   }else if (questionTwo === 'no' || questionTwo === 'n') {
     console.log('user input: ' + questionTwo);
     wrongAnswer();
-    alert('I\'m actually pretty allergic to bananas. Weird, eh.');
   }else {
     console.log('user input question2: ' + questionTwo);
     wrongInput();
-    alert('As weird as it sounds, I am indeed allergic to bananas');
   }
 }
-quizTwo();
 
 function quizThree() {
   var questionThree = prompt('I speak 4 languages').toLowerCase();
+  rightAnswer = 'I speak French, English, German and Latin!';
   console.log('user input question3: ' + questionThree);
   if (questionThree === 'yes' || questionThree === 'y' ) {
     congratulate();
-    guessScore = guessScore + 1;
+    guessCount();
   }else if (questionThree === 'no' || questionThree === 'n') {
     wrongAnswer();
-    alert('I speak French, English, German and Latin!');
   }else {
     wrongInput();
-    alert('The answer was yes, I speak French, English, German and Latin');
   }
 }
-quizThree();
 
 function quizFour() {
   var questionFour = prompt('I\'ve lived in 6 countries').toLowerCase();
+  rightAnswer = 'I\'ve actually lived in 5 : France, Germany, England, Canada and the US';
   console.log('user input question 4: ' + questionFour);
   if (questionFour === 'yes' || questionFour === 'y') {
     wrongAnswer();
-    alert('I\'ve actually lived in 5 : France, Germany, England, Canada and the US');
   }else if (questionFour === 'no' || questionFour === 'n') {
     congratulate();
-    guessScore = guessScore + 1;
+    guessCount();
   }else {
     wrongInput();
-    alert('The answer was no, I lived in 5 countries : France, Germany, England, Canada and the US');
   }
 }
-quizFour();
 
 function quizFive() {
   var questionFive = prompt('In my spare time I golf').toLowerCase();
+  rightAnswer = 'I do not golf, but I read a lot!';
   console.log('user input question5: ' + questionFive) ;
   if (questionFive === 'yes' || questionFive === 'y') {
     wrongAnswer();
-    alert('I don\'t golf, but I read a lot!');
   }else if (questionFive === 'no' || questionFive === 'n') {
     congratulate();
-    guessScore = guessScore + 1;
+    guessCount();
   }else {
     wrongInput();
-    alert('The answer was no, I do not golf, I read!');
   }
 }
-quizFive();
 
 function quizSix() {
   alert('Now let\'s play a guessing game!');
   var randomNumber = Math.round(Math.random() * 10);
+  rightAnswer = 'The number was ' + randomNumber;
   console.log(randomNumber);
   var goodGuess = false;
   var randomNumberGuess = 0;
@@ -112,9 +113,9 @@ function quizSix() {
       alert('That\'s not even a number!');
       randomNumberGuess++;
     }else if (questionSix === randomNumber) {
-      alert('You guessed it!');
-      guessScore = guessScore + 1;
+      guessCount();
       goodGuess = true;
+      congratulate();
     }else if (questionSix > randomNumber) {
       alert('That\'s too high!');
       randomNumberGuess++;
@@ -123,34 +124,47 @@ function quizSix() {
       randomNumberGuess++;
     }
   }
-  alert('The number was ' + randomNumber);
+  if (goodGuess === false) {
+    wrongAnswer();
+  }
 }
-quizSix();
 
 function quizSeven() {
   var city = ['soissons', 'lille', 'frankfurt', 'vancouver', 'york'];
   var cityGuess = 0;
   var goodGuess = false;
+  rightAnswer = 'I have lived in Soissons, Lille, Frankfurt, Vancouver, York';
   while (cityGuess < 6 && goodGuess === false) {
     var questionSeven = prompt('Besides Seattle, in what other city have I lived in?').toLowerCase();
     console.log('user input question7: ' + questionSeven);
     for (var i = 0; i < city.length; i++) {
       if (questionSeven === city[i]) {
-        guessScore = guessScore + 1;
+        guessCount();
         goodGuess = true;
       }
     }
     cityGuess++;
     if (goodGuess === false) {
-      alert('I\'ve never lived there.');
     }else {
-      alert('You\'re right!');
-
+      congratulate();
     }
   }
-  alert('Besides Seattle, I\'ve lived in Soissons, Lille, Frankfurt, Vancouver and York');
+  if (goodGuess === false) {
+    wrongAnswer();
+  }
 }
 
-quizSeven();
+function quiz() {
+  quizOne();
+  quizTwo();
+  quizThree();
+  quizFour();
+  quizFive();
+  quizSix();
+  quizSeven();
+  alert('You guessed ' + guessScore + ' out of 7');
+}
 
-alert('You guessed ' + guessScore + ' out of 7 answers, ' + userName + '!');
+// actual code :
+
+quiz();
