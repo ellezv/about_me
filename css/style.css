@@ -9,7 +9,7 @@ h3 {
 
 img {
   border-radius: 50%;
-  width: 100px;
+  max-width: 100px;
   height: 130px;
   margin-bottom: 30px;
 
@@ -23,7 +23,7 @@ img {
 #bio {
   padding-top : 30px;
   float : left;
-  width: 250px;
+  max-width: 250px;
   text-align: justify;
   margin-left : 50px;
 
@@ -32,7 +32,7 @@ img {
 #exp {
   padding-top: 30px;
   float : left;
-  width : 250px;
+  max-width : 250px;
 
   margin-left: 230px;
 
@@ -41,7 +41,7 @@ img {
 #goals {
   padding-top: 30px;
   margin-left: 900px;
-  width: 250px;
+  max-width: 250px;
 }
 
 #topTen {
@@ -49,13 +49,11 @@ img {
   margin-top: 150px;
 }
 
-ol li{
+ol li {
   float: left;
   margin-left: 45px;
 }
 
-
-}
 ul {
   text-align: left;
   padding-left: 0px;
@@ -64,4 +62,10 @@ ul {
 body {
   font-family : 'Lobster', cursive;
   background-color: #FFE1B8;
+}
+
+footer {
+ max-width: 100%;
+ min-height: 100px;
+ float: left;
 }

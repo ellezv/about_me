@@ -1,11 +1,13 @@
 'use strict';
+
+// global variables :
 var guessScore = 0;
 var userName = prompt('Bonjour! What\'s your name?');
 alert('ok ' + userName + ', let\'s play a guessing game! Answer yes or no to the following questions:');
 var rightAnswer = '';
 
-//functions :
 
+//functions :
 function guessCount() {
   guessScore++;
   return guessScore;
@@ -164,6 +166,7 @@ function quiz() {
   quizSeven();
   alert('You guessed ' + guessScore + ' out of 7');
 }
+
 
 // actual code :
 
