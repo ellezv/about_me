@@ -168,6 +168,6 @@ function quiz() {
 }
 
 
-// actual code :
+// actual code that does something :
 
 quiz();
