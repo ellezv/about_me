@@ -3,7 +3,7 @@
 // global variables :
 var guessScore = 0;
 var userName = prompt('Bonjour! What\'s your name?');
-alert('ok ' + userName + ', let\'s play a guessing game! Answer yes or no to the following questions:');
+alert('Welcome ' + userName + ', let\'s see how well you know me! Answer yes or no to the following questions:');
 var rightAnswer = '';
 
 
@@ -30,8 +30,9 @@ function wrongInput() {
 
 function quizOne() {
   var questionOne = prompt('I went to nursing school').toLowerCase();
-  rightAnswer = 'I did go to nursing school';
+  rightAnswer = 'I did go to nursing school in France';
   console.log('user input question1: ' + questionOne);
+  console.log('correct answer : yes');
   if (questionOne === 'y' || questionOne == 'yes') {
     congratulate();
     guessCount();
@@ -44,25 +45,25 @@ function quizOne() {
 }
 
 function quizTwo() {
-  var questionTwo = prompt('I am allergic to bananas').toLowerCase();
+  var questionTwo = prompt('I am allergic to banana').toLowerCase();
   console.log('user input question2: ' + questionTwo);
-  rightAnswer = 'As weird as it sounds, I am indeed allergic to bananas';
+  console.log('correct answer : yes');
+  rightAnswer = 'As weird as it sounds, I am indeed allergic to banana';
   if (questionTwo === 'yes' || questionTwo === 'y') {
     congratulate();
     guessCount();
   }else if (questionTwo === 'no' || questionTwo === 'n') {
-    console.log('user input: ' + questionTwo);
     wrongAnswer();
   }else {
-    console.log('user input question2: ' + questionTwo);
     wrongInput();
   }
 }
 
 function quizThree() {
-  var questionThree = prompt('I speak 4 languages').toLowerCase();
-  rightAnswer = 'I speak French, English, German and Latin!';
+  var questionThree = prompt('I am half North African').toLowerCase();
+  rightAnswer = 'My mother was born in Algeria and moved to France during the civil war. I am biracial and very proud of my Arab heritage.';
   console.log('user input question3: ' + questionThree);
+  console.log('correct answer: yes');
   if (questionThree === 'yes' || questionThree === 'y' ) {
     congratulate();
     guessCount();
@@ -75,8 +76,9 @@ function quizThree() {
 
 function quizFour() {
   var questionFour = prompt('I\'ve lived in 6 countries').toLowerCase();
-  rightAnswer = 'I\'ve actually lived in 5 : France, Germany, England, Canada and the US';
+  rightAnswer = 'I\'ve actually lived in 5: France, Germany, England, Canada and the US';
   console.log('user input question 4: ' + questionFour);
+  console.log('correct answer : no');
   if (questionFour === 'yes' || questionFour === 'y') {
     wrongAnswer();
   }else if (questionFour === 'no' || questionFour === 'n') {
@@ -89,8 +91,9 @@ function quizFour() {
 
 function quizFive() {
   var questionFive = prompt('In my spare time I golf').toLowerCase();
-  rightAnswer = 'I do not golf, but I read a lot!';
+  rightAnswer = 'I do not golf, in my spare time you will most likely find me with a book!';
   console.log('user input question5: ' + questionFive) ;
+  console.log('correct answer: no');
   if (questionFive === 'yes' || questionFive === 'y') {
     wrongAnswer();
   }else if (questionFive === 'no' || questionFive === 'n') {
@@ -102,10 +105,10 @@ function quizFive() {
 }
 
 function quizSix() {
-  alert('Now let\'s play a guessing game!');
+  alert('Now let\'s play a little guessing game!');
   var randomNumber = Math.round(Math.random() * 10);
   rightAnswer = 'The number was ' + randomNumber;
-  console.log(randomNumber);
+  console.log('The random is number is ' + randomNumber);
   var goodGuess = false;
   var randomNumberGuess = 0;
   while (randomNumberGuess < 4 && goodGuess === false) {
@@ -132,6 +135,7 @@ function quizSix() {
 }
 
 function quizSeven() {
+  alert('Last question, a little bit harder this time, you get 6 tries:');
   var city = ['soissons', 'lille', 'frankfurt', 'vancouver', 'york'];
   var cityGuess = 0;
   var goodGuess = false;
@@ -154,6 +158,7 @@ function quizSeven() {
   if (goodGuess === false) {
     wrongAnswer();
   }
+  console.log('correct answer: ' + city);
 }
 
 function quiz() {
@@ -168,6 +173,6 @@ function quiz() {
 }
 
 
-// actual code that does something :
+// calling my quiz function :
 
 quiz();
