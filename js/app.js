@@ -174,5 +174,4 @@ function quiz() {
 
 
 // calling my quiz function :
-
 quiz();
